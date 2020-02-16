@@ -1,0 +1,18 @@
+# context-free grammar to generate german-ish town/village names.
+
+7*init = <mittel><ende>
+4*init = <vor><mittel><ende>
+init = <vor><ende>
+
+1*mittel = <m_egal>
+1*mittel = <m_egal>en
+4*mittel = <m_fest>
+
+2*vor = ober|unter|vorder|hinter|groß|klein|langen|kurzen
+vor = neu|alt
+m_egal = mitt|au|wall|weiß|holl|strahl|neu|pill|salz|weil|fried|kreuz
+m_fest = stein|witten|rade|welten|hoyers|stern|lichten|bischofs|königs|kaisers|klee|leuten|franken|friedrichs|grafen|greifs
+4*ende = dorf|stadt|berg|burg
+2*ende = stein|berge|hausen|kirchen|stedt
+ende = werda|au|bach|wasser|sund|rode|roda|tal|thal|nitz|grund|brück|lautern|ingen|weida|heim|feld|felde
+ende = wiesa|brunn|walde|wald|wedel|see

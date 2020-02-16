@@ -1,0 +1,21 @@
+# generic CFG for a simple formal language
+# Language: sequence of a,b, then a number of c's, then the a,b sequence backwards (such as "ababcccbaba")
+
+# a simple transition to set the start nonterminal (alternatively, we could just use <init> instead of <S> in the rules below)
+init = <S>
+
+S = a<S>a
+S = b<S>b
+S = <C>
+# this could also be written as one-liner:
+# S = a<S>a | b<S>b | <C>
+
+# have a higher probability of generating more c's
+3* C = c<C>
+# <e> means the empty string
+C = <e>
+
+# always make sure your grammar has no non-terminating nonterminals. If you don't, you will experience a stack overflow.
+# this would not work:
+# S = <N>
+# N = n<N>
